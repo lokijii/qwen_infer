@@ -221,7 +221,7 @@ def _launch_demo(args, model, tokenizer):
         addfile_btn.upload(add_file, [chatbot, task_history, addfile_btn], [chatbot, task_history], show_progress=True)
 
         gr.Markdown("""\
-<font size=2>Note: This demo is governed by the original license of Qwen-VL(Qwen-VL Finetuned on ArtExp. \
+<font size=2>Note: This demo is governed by the original license of Qwen-VL(Qwen-VL Finetuned on ArtExp). \
 We strongly advise users not to knowingly generate or allow others to knowingly generate harmful content, \
 including hate speech, violence, pornography, deception, etc. \
 """)
