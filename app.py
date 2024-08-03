@@ -17,9 +17,16 @@ import os
 import re
 import secrets
 import tempfile
-from modelscope import (
-    AutoModelForCausalLM, AutoTokenizer, GenerationConfig
-)
+from pathlib import Path
+
+import copy
+import os
+import re
+import secrets
+import tempfile
+from peft import AutoPeftModelForCausalLM
+from transformers import AutoTokenizer
+from transformers.generation import GenerationConfig
 from huggingface_hub import snapshot_download
 
 DEFAULT_CKPT_PATH = 'lokijii/qwen'
@@ -49,25 +56,20 @@ def _get_args():
 
 
 def _load_model_tokenizer(args):
-    model_id = args.checkpoint_path
-    model_dir = snapshot_download(model_id)
     tokenizer = AutoTokenizer.from_pretrained(
-        model_dir, trust_remote_code=True, resume_download=True,
+        DEFAULT_CKPT_PATH, trust_remote_code=True,
     )
 
-    if args.cpu_only:
-        device_map = "cpu"
-    else:
-        device_map = "auto"
+    device_map = "cuda"
 
-    model = AutoModelForCausalLM.from_pretrained(
-        model_dir,
+    model = AutoPeftModelForCausalLM.from_pretrained(
+        DEFAULT_CKPT_PATH,
         device_map=device_map,
         trust_remote_code=True,
-        resume_download=True,
     ).eval()
+    
     model.generation_config = GenerationConfig.from_pretrained(
-        model_dir, trust_remote_code=True, resume_download=True,
+        DEFAULT_CKPT_PATH, trust_remote_code=True,
     )
 
     return model, tokenizer
