@@ -22,7 +22,7 @@ from modelscope import (
 )
 from huggingface_hub import snapshot_download
 
-DEFAULT_CKPT_PATH = '4bit/Qwen-VL-Chat-Int4'
+DEFAULT_CKPT_PATH = 'lokijii/qwen/Checkpoint'
 REVISION = 'v1.0.0'
 BOX_TAG_PATTERN = r"<box>([\s\S]*?)</box>"
 PUNCTUATION = "！？。＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏."
