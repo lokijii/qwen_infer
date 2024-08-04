@@ -60,7 +60,10 @@ def _load_model_tokenizer(args):
         DEFAULT_CKPT_PATH, trust_remote_code=True,
     )
 
-    device_map = "cuda"
+    if args.cpu_only:
+        device_map = "cpu"
+    else:
+        device_map = "auto"
 
     model = AutoPeftModelForCausalLM.from_pretrained(
         DEFAULT_CKPT_PATH,
