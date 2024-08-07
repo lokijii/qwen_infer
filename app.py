@@ -29,7 +29,7 @@ from transformers import AutoTokenizer
 from transformers.generation import GenerationConfig
 from huggingface_hub import snapshot_download
 
-DEFAULT_CKPT_PATH = 'lokijii/qwen'
+DEFAULT_CKPT_PATH = 'lokijii/qwen_vl_expart'
 REVISION = 'v1.0.0'
 BOX_TAG_PATTERN = r"<box>([\s\S]*?)</box>"
 PUNCTUATION = "！？。＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏."
