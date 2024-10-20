@@ -3,6 +3,7 @@ run qwen_infer_in_colab.ipynb
 
 ## For running Locally
 pip install -r requirements.txt
+
 python app.py --share
 
 ## Main Repo
