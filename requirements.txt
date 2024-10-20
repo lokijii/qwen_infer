@@ -1,0 +1,8 @@
+tiktoken 
+transformers_stream_generator 
+gradio==3.50.2 
+optimum 
+auto-gptq 
+huggingface_hub 
+einops
+transformers==4.32.0
