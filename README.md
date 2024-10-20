@@ -2,6 +2,8 @@
 run qwen_infer_in_colab.ipynb
 
 ## For running Locally
+git clone https://github.com/lokijii/qwen_infer.git
+
 pip install -r requirements.txt
 
 python app.py --share
